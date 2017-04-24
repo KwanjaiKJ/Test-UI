@@ -71,7 +71,7 @@
                     </div>
                     <div class="panel-footer"></div>
                   </div>
-                  
+
                   </div>
             </div>
 
@@ -98,23 +98,22 @@
     <script type="text/javascript">
 
     $("#signin").click(function() {
-      var url = "http://membershipwebapi977290.azurewebsites.net/api/Members/signin?";
-      url += "username=" + $("#username").val();
-      url += "&password=" + $("#password").val();
-      console.log(url);
-      $.get(url, function(data, status) {
+    var url = "http://membershipwebapi977290.azurewebsites.net/api/Members/signin?";
+    url += "username=" + $("#username").val();
+    url += "&password=" + $("#password").val();
+    console.log(url);
+    $.get(url, function(data, status) {
         console.log(data);
-        if(data == true){
-          //Goto User's info
-
-        }else{
-          //Goto Sign up
-          $("#err").show();
-          //window.location.href = "signup.html";
+        if (data.Status == true) {
+            console.log( data.Status);
+            $("#suc").show();
+        } else {
+            console.log( data.Status);
+            $("#err").show();
         }
-      });
     });
-  </script>
+});
+</script>
 
 
 
