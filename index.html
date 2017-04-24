@@ -36,50 +36,50 @@
 <body id="page-top" class="index">
 
     <!-- Navigation -->
-    <nav id="mainNav" class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <nav class="navbar navbar-inverse">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header page-scroll">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+
                 </button>
-                <a class="navbar-brand page-scroll" href="#page-top">Signin</a>
+                <a class="navbar-brand page-scroll">Signin</a>
                 <a class="logo" id="grid">&nbsp;</a>
-                  <div class="container">
-                  <h1>Sign In</h1>
-                  <div class="panel panel-default">
 
-                    <div class="panel-body">
-                      <form class="" action="#" method="post">
+            </div>
+        </div>
+        <div class="container">
+            <h1>Sign In</h1>
+            <div class="panel panel-default">
+
+                <div class="panel-body">
+                    <form class="" action="#" method="post">
                         <div class="form-group">
 
-                          <div class="form-group">
+                            <div class="form-group">
 
-        <label for="username"> <span class="glyphicon glyphicon-user"></span>Username</label>
-        <input type="text" class="form-control" id="username" placeholder="">
-        <p class="help-block">Help text here.</p>
-      </div>
-      <div class="form-group">
-        <label for="password"><i class="material-icons">&#xe90d;</i>Password</label>
-        <input type="password" class="form-control" id="password" placeholder="">
-        <p class="help-block">Help text here.</p>
-      </div>
-                        <div class="form-group">
-                          <button type="button" id="signin" class="btn btn-primary" name="button">Sign In</button>
-                        </div>
-                      </form>
+                                <label for="username"> <span class="glyphicon glyphicon-user"></span>Username</label>
+                                <input type="text" class="form-control" id="username" placeholder="">
+                                <p class="help-block">Help text here.</p>
+                            </div>
+                            <div class="form-group">
+                                <label for="password"><i class="material-icons">&#xe90d;</i>Password</label>
+                                <input type="password" class="form-control" id="password" placeholder="">
+                                <p class="help-block">Help text here.</p>
+                            </div>
+                            <divclass="form-group">
+                                <button type="button" id="signin" class="btn btn-primary" name="button">Sign In</button>
+                            </div>
+                    </form>
                     </div>
                     <div class="panel-footer"></div>
-                  </div>
+                </div>
 
-                  </div>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+
+                <!-- /.navbar-collapse -->
             </div>
-
-            <!-- Collect the nav links, forms, and other content for toggling -->
-
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container-fluid -->
+            <!-- /.container-fluid -->
     </nav>
     <script src="vendor/jquery/jquery.min.js"></script>
 
@@ -96,27 +96,22 @@
     <!-- Theme JavaScript -->
     <script src="js/agency.min.js"></script>
     <script type="text/javascript">
-
-    $("#signin").click(function() {
-    var url = "http://membershipwebapi977290.azurewebsites.net/api/Members/signin?";
-    url += "username=" + $("#username").val();
-    url += "&password=" + $("#password").val();
-    console.log(url);
-    $.get(url, function(data, status) {
-        console.log(data);
-        if (data.Status == true) {
-            console.log( data.Status);
-            $("#suc").show();
-        } else {
-            console.log( data.Status);
-            $("#err").show();
-        }
-    });
-});
-</script>
-
-
-
+        $("#signin").click(function() {
+            url += "username=" + $("#username").val();
+            url += "&password=" + $("#password").val();
+            console.log(url);
+            $.get(url, function(data, status) {
+                console.log(data);
+                if (data.Status == true) {
+                    console.log(data.Status);
+                    $("#suc").show();
+                } else {
+                    console.log(data.Status);
+                    $("#err").show();
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>
